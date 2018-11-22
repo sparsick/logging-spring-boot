@@ -1,6 +1,5 @@
 package com.github.sparsick.logging;
 
-import com.github.sparsick.logging.StarWarsMovieController;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,11 +18,11 @@ public class StarWarsMovieControllerIT {
     private MockMvc mockMvc;
 
     @Test
-    public void findAllMovies(){
+    public void findAllMovies() {
         given().mockMvc(mockMvc).
-        when().get("/starwars/movies").
-        then().statusCode(200)
-                .body("title",  hasItems("A New Hope", "The Force Awakens"))
+                when().get("/starwars/movies").
+                then().statusCode(200)
+                .body("title", hasItems("A New Hope", "The Force Awakens"))
                 .body("director", hasItems("George Lucas", "J. J. Abrams"));
     }
 

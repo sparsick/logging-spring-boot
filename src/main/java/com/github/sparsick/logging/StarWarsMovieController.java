@@ -17,11 +17,13 @@ public class StarWarsMovieController {
 
     @RequestMapping(value="movies", method = RequestMethod.GET, produces = "application/json")
     public @ResponseBody List<StarWarsMovie> findAllMovies(){
-        LOGGER.info("INFO Star Wars Movie List");
         LOGGER.trace("TRACE Star Wars Movie List");
-        LOGGER.error("ERROR Star Wars Movie List");
-        LOGGER.warn("WARN Star Wars Movie List");
         LOGGER.debug("DEBUG Star Wars Movie List");
+        LOGGER.info("INFO Star Wars Movie List");
+        LOGGER.warn("WARN Star Wars Movie List");
+        LOGGER.error("ERROR Star Wars Movie List");
+        LOGGER.fatal("FATAL Star Wars Movie List");
+
         return List.of(new StarWarsMovie("A New Hope", "George Lucas"),
                 new StarWarsMovie("The Force Awakens", "J. J. Abrams"));
     }
